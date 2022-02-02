@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*  본문  */
+#wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 1400px;
+  min-height: 100%;
+  background-color: tomato;
+  font-family: 'Montserrat', "Noto Sans KR", sans-serif; }
+
+.res {
+  display: none; }
+  @media screen and (max-width: 767px) {
+    .res {
+      display: block; } }
+
+.center {
+  position: relative;
+  width: 1360px;
+  margin: 0 auto; }
+  @media screen and (max-width: 1400px) {
+    .center {
+      width: 97%;
+      margin: 0 1.5%; } }
+
+section {
+  padding-bottom: 15vh; }
+  @media screen and (max-width: 1400px) {
+    section {
+      padding-bottom: 8vh; } }
+
+.arrow .btn {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid #222;
+  transition: .3s; }
+  .arrow .btn a {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 55%;
+    width: 16px;
+    height: 16px;
+    border-left: 1px solid #222;
+    border-bottom: 1px solid #222;
+    transform: translate(-50%, -50%);
+    transition: .2s; }
+  .arrow .btn.prev-btn {
+    left: 3%;
+    transform: rotate(45deg); }
+  .arrow .btn.next-btn {
+    right: 3%;
+    transform: rotate(225deg); }
+  .arrow .btn:hover {
+    background: #222; }
+  .arrow .btn:hover a {
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff; }
+
+/*# sourceMappingURL=%EB%B3%80%EC%88%98%EB%AA%A8%EC%9D%8C.css.map */

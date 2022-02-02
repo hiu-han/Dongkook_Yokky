@@ -1,0 +1,85 @@
+// 변수만들기
+$mainC1: rgb(153, 202, 60);
+$mainC2: rgb(83, 183, 232);
+$mainC3: rgb(22, 43, 72);
+$titleC: rgb(0, 0, 0, );
+$textC: #666666;
+$engFont: 'Montserrat',
+"Noto Sans KR",
+sans-serif;
+$sQFont: 'NanumSquare',
+sans-serif;
+$notoFont: "Noto Sans KR",
+sans-serif;
+
+
+// 반응형 사이즈
+$pc-lg: 1400px;
+$pc-md: 1263px;
+$pc-sm: 1024px;
+// $mo-lg: 767px;
+$mo-lg: 797px;
+$mo-md: 640px;
+$mo-sm: 480px;
+$mo-xs: 380px;
+
+// mixin 등록
+
+@mixin clearFix() {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin text-box ($fF, $fSize, $lS, $lH) {
+  font-family: $fF;
+  font-size: $fSize;
+  word-break: keep-all;
+  letter-spacing: $lS;
+  line-height: $lH;
+}
+
+@mixin more-btn ($w, $h, $pR, $fSize, $color, $lHeight, $imgNum) {
+  display: block;
+  position: relative;
+  width: $w;
+  height: $h;
+  padding-right: $pR;
+  font-size: $fSize;
+  color: $color;
+  line-height: $lHeight;
+  transition: 0.3s;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+
+    background: {
+      image: url(../images/common/btn-more.svg);
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+
+  &:hover {
+    font-weight: bold;
+
+    &::after {
+      background-image: url(../images/common/btn-more-2px.svg);
+    }
+  }
+}
+
+@mixin media ($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
